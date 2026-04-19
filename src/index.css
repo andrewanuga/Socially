@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold:#F59E0B; --gold-light:#FCD34D; --orange:#EA580C;
+  --gold-dim:rgba(245,158,11,0.12); --gold-glow:rgba(245,158,11,0.30);
+  --border:rgba(245,158,11,0.12); --border2:rgba(245,158,11,0.25);
+  --text:#f5f0e8; --text2:#a89880; --text3:#665544;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:#080808;color:#f5f0e8;font-family:'DM Sans',sans-serif;cursor:none!important;overflow-x:hidden}
+*{cursor:none!important}
+
+#socially-cursor{position:fixed;width:12px;height:12px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:difference}
+#socially-trail{position:fixed;width:36px;height:36px;border:1px solid var(--gold-glow);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+#socially-cursor.hov{width:20px;height:20px}
+#socially-trail.hov{width:52px;height:52px}
+
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:#0e0e0e}
+::-webkit-scrollbar-thumb{background:#222;border-radius:2px}
+::-webkit-scrollbar-thumb:hover{background:var(--gold)}
+
+.text-gold-gradient{background:linear-gradient(135deg,#FCD34D,#F59E0B,#EA580C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.text-outline{-webkit-text-stroke:1px rgba(102,85,68,0.8);-webkit-text-fill-color:transparent}
+.typing-cursor{display:inline-block;width:2px;height:1em;background:var(--gold);vertical-align:middle;margin-left:2px;animation:blink 1s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.status-published{background:rgba(16,185,129,.15);color:#10B981}
+.status-scheduled{background:rgba(245,158,11,.15);color:#F59E0B}
+.status-draft{background:rgba(107,114,128,.2);color:#9CA3AF}
+.orb{border-radius:50%;filter:blur(80px);pointer-events:none}
